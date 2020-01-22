@@ -1,11 +1,36 @@
 import React from 'react';
+import Todos from "./components/Todos";
+
 import './App.css';
 
 class App extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            todos: [
+                {
+                    id: 1,
+                    title: 'Take out trash',
+                    completed: false
+                },
+                {
+                    id: 2,
+                    title: 'Dinner',
+                    completed: true
+                },
+                {
+                    id: 3,
+                    title: 'Meeting',
+                    completed: false
+                },
+            ]
+        }
+    }
+
   render() {
     return(
         <div className="App">
-          <h1>App</h1>
+          <Todos todos={this.state.todos} />
         </div>
     )
   }
